@@ -1,13 +1,20 @@
-<?php
-  function greet($name, $planet)
-  {
-      echo "<p>Hi, my name $name and I from planet $planet</p>";
+<?php 
+
+  $droids = array('C3PO', 'R2D2');
+
+  $count = 0;
+
+  // while($count < 10) {
+  //   echo "<li>$count</li>";
+  //   $count++;
+  // }
+
+  while($count < count($droids)) {
+    echo "<li>Hi my name is $droids[$count]</li>";
+    $count++;
   }
 
-  greet('R2D2', 'Naboo');
-  greet('C-3PO', 'Tatooine');
 ?>
 
-<h1> <?php bloginfo('name'); ?> </h1>
+<p> I am: <?php echo $droids[1] ?></p>
 
-<p> <?php bloginfo('description'); ?> </p>
