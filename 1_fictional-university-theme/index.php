@@ -1,20 +1,9 @@
+<!-- pobiera 10 ostatnich postów -->
 <?php 
-
-  $droids = array('C3PO', 'R2D2');
-
-  $count = 0;
-
-  // while($count < 10) {
-  //   echo "<li>$count</li>";
-  //   $count++;
-  // }
-
-  while($count < count($droids)) {
-    echo "<li>Hi my name is $droids[$count]</li>";
-    $count++;
-  }
-
+  while (have_posts(  )) {
+    the_post(); ?>
+    <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+    <?php  the_content(); ?>
+  <?php }
 ?>
-
-<p> I am: <?php echo $droids[1] ?></p>
 
