@@ -18,5 +18,13 @@
   // call action(when, which), wp_enqueue_scripts - right before you run the action -> scripts hook/run styles
   add_action('wp_enqueue_scripts', 'university_files');
 
+
+  function university_features () {
+    add_theme_support('title_tag');
+  }
+
+  // add after setup actions
+  add_action('after_setup_theme', 'university_features');
+
 ?>
 
