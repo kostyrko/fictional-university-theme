@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- ustawienia językowe zależne od ustawień wordpressa -->
+<html <?php language_attributes(); ?>>
 <head>
-  <!-- <meta charset="UTF-8">
+  <!-- ustawienie kodowania tekstu (rodzaj liter) -->
+  <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fictional University</title> -->
+  <title>Fictional University</title>
+
   <?php wp_head(); ?>
 </head>
-<body>
+<!-- zmienne klasy zależne od miejsca,które danym momencie jest wyświetlane -->
+<body <?php body_class(); ?>>
 <header class="site-header">
       <div class="container">
         <h1 class="school-logo-text float-left">
@@ -32,3 +36,5 @@
         </div>
       </div>
     </header>
+
+
