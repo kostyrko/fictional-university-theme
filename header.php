@@ -27,12 +27,13 @@
         ));
       ?> -->
         <ul>
-        <!-- jeśli dana strona jest 'about-us' lub jeśli jest podstroną 'about-us' wtedy wykonaj -przez echo// is_page - sprawdza czy arg. podany jest zgodny z prawdą jako arg. przyjmuje slug -->
+        <!-- jeśli dana strona jest 'about-us' lub jeśli jest podstroną 'about-us' wtedy wykonaj - przez echo// is_page - sprawdza czy arg. podany jest zgodny z prawdą jako arg. przyjmuje slug -->
           <li <?php if(is_page( 'about-us' ) or wp_get_post_parent_id( 0 ) === 12) echo 'class="current-menu-item"' ?>><a href="<?php echo site_url('/about-us/') ?>">About Us</a></li>
           <li><a href="#">Programs</a></li>
           <li><a href="#">Events</a></li>
           <li><a href="#">Campuses</a></li>
-          <li><a href="#">Blog</a></li>
+          <!-- jeśli typ strony jest post to wtedy dodaj html/klasę  -->
+          <li <?php if (get_post_type() == 'post') echo 'class="current-menu-item' ?>><a href="<?php echo site_url('/blog'); ?>">Blog</a></li>
         </ul>
       </nav>
       <div class="site-header__util">
