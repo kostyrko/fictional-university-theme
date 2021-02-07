@@ -9,10 +9,23 @@
     wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
     // loading CSS
-    wp_enqueue_style('university_main_styles', get_stylesheet_uri());
+    // wp_enqueue_style('university_main_styles', get_stylesheet_uri());
     
     // for a loading JS file, (directory/file), dependencies, version nr, load before closing body tag = true
-    wp_enqueue_script('main-university-js', get_theme_file_uri('/js/scripts-bundled.js'), NULL, '1.0', true);
+    // wp_enqueue_script('main-university-js', get_theme_file_uri('/js/scripts-bundled.js'), NULL, '1.0', true);
+
+    wp_enqueue_script('main-university-js', 'http://localhost:3000/bundled.js', NULL, '1.0', true);
+
+    // if(strstr($_SERVER['SERVER_NAME'], 'localhost:10003')) {
+    //   // serve js/css from localhost (by webpack)
+    //   wp_enqueue_script('main-university-js', 'http://localhost:3000/bundled.js', NULL, '1.0', true);
+    // } else {
+    //   wp_enqueue_script('our-university-js', get_theme_file_uri('/bundled-assets/vendors~scripts.8c97d901916ad616a264.js'), NULL, '1.0', true);
+    //   wp_enqueue_script('main-university-js', get_theme_file_uri('/bundled-assets/scripts.bc49dbb23afb98cfc0f7.js'), NULL, '1.0', true);
+    //   wp_enqueue_script('our-main-styles', get_theme_file_uri('/bundled-assets/styles.bc49dbb23afb98cfc0f7.css'), NULL, '1.0', true);
+    // }
+    
+
   }
 
   // call action(when, which), wp_enqueue_scripts - right before you run the action -> scripts hook/run styles
