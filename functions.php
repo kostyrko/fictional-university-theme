@@ -49,7 +49,11 @@
   // function university_post_types()
   // {
   //     register_post_type('event', array(
-  //     'rewrite' => array ('slug'=>'events')
+  //      -- new type of editor ---
+  //     'show_in_rest' => true,
+  //      -- new type of excerpt + new editor ---
+  //     'supports' => array('title', 'editor', 'excerpt'),
+  //     'rewrite' => array ('slug'=>'events'),
   //     'has_archive' => true,
   //     'public' => true,
   //     'labels' => array(
