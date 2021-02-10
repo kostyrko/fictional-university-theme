@@ -18,9 +18,28 @@
           <h2 class="headline headline--small-plus t-center">Upcoming Events</h2>
           <!-- Custom query for events -->
           <?php 
+            // the same format as the plugin uses/was set in Advance Custom Fields
+            $today = date('Ymd');
             $homepageEvents = new WP_Query(array(
-              'posts_per_page' => 2,
-              'post_type' =>'event'
+              // -1 all post that meet this conditions
+              'posts_per_page' => -1,
+              'post_type' =>'event',
+              // set meta data
+              'meta_key' => 'event_date',
+              // by pice of meta data which is a number
+              'orderby' => 'meta_value_num',
+              // Ascending order
+              'order' => 'ASC',
+              // query of meta data for posts that show date not older than today
+              'meta_query' => array (
+                array(
+                  'key' => 'event_date',
+                  'compare' => '>=',
+                  'value' => $today,
+                  // type of data to compare
+                  'type' => 'numeric'
+                )
+              )
             ));
 
             while($homepageEvents->have_posts()) {
