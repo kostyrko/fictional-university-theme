@@ -52,7 +52,7 @@
   //      -- new type of editor ---
   //     'show_in_rest' => true,
   //      -- new type of excerpt + new editor ---
-  //     'supports' => array('title', 'editor', 'excerpt', 'custom-fields'),
+  //     'supports' => array('title', 'editor', 'excerpt'),
   //     'rewrite' => array ('slug'=>'events'),
   //     'has_archive' => true,
   //     'public' => true,
