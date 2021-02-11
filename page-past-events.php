@@ -6,8 +6,8 @@ get_header(); ?>
   <!-- get_theme_file_uri('') -->
   <div class="page-banner__bg-image" style="background-image: url(<?php echo get_theme_file_uri('/images/ocean.jpg') ?>);"></div>
   <div class="page-banner__content container container--narrow">
-    <h1 class="page-banner__title"> All events </h1>
-    <p> See what is going on in our world </p>
+    <h1 class="page-banner__title"> Past events </h1>
+    <p> Recap of past events </p>
     <!-- sub-title -->
     <div class="page-banner__intro">
       <p>Keep up with our latest news</p>
@@ -18,8 +18,33 @@ get_header(); ?>
 <div class="container container--narrow page-section">
 <!-- display posts - as long as the function have_posts() display true -->
 <?php 
-  while(have_posts()) {
-    the_post(); ?>
+
+$today = date('Ymd');
+$pastEvents = new WP_Query(array(
+  // tells custom query which page, go and look at the end of url
+  'paged' => get_query_var('paged', 1),
+  'post_type' =>'event',
+  // set meta data
+  'meta_key' => 'event_date',
+  // by pice of meta data which is a number
+  'orderby' => 'meta_value_num',
+  // Ascending order
+  'order' => 'ASC',
+  // query of meta data for posts that show date not older than today
+  'meta_query' => array (
+    array(
+      'key' => 'event_date',
+      'compare' => '<=',
+      'value' => $today,
+      // type of data to compare
+      'type' => 'numeric'
+    )
+  )
+));
+
+  // look inside an object
+  while($pastEvents->have_posts()) {
+    $pastEvents->the_post(); ?>
     <div class="event-summary">
         <a class="event-summary__date t-center" href="<?php the_permalink(); ?>">
           <!-- get_field() - wymaga ustawienia plugin Advance Custom Fields lekcja 36. -->
@@ -38,13 +63,11 @@ get_header(); ?>
     <?php
   }
   // add pagination
-  echo paginate_links( )
+  echo paginate_links(array(
+    'total' => $pastEvents->max_num_pages
+  ));
 ?>
-<hr class="section-break">
-<p> Looking for a recap of past events ? Checkout <a href=" <?php site_url('/past_events') ?> "> Archives</a> </p>
-
 </div>
-  
 
 <?php 
 get_footer();
