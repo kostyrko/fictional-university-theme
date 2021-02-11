@@ -22,7 +22,7 @@
             $today = date('Ymd');
             $homepageEvents = new WP_Query(array(
               // -1 all post that meet this conditions
-              'posts_per_page' => -1,
+              'posts_per_page' => 2,
               'post_type' =>'event',
               // set meta data
               'meta_key' => 'event_date',
