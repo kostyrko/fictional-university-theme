@@ -36,8 +36,9 @@
       register_nav_menu('headerMenuLocation', 'Header Menu Location');
       register_nav_menu('footerLocationOne', 'Footer Location One');
       register_nav_menu('footerLocationTwo', 'Footer Location Two');
-
       add_theme_support('title_tag');
+
+      add_image_size('pageBanner', 1500, 350, true);
   }
 
   // add after setup actions - wykonaj te funkcje
