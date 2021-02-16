@@ -1,5 +1,22 @@
 <?php
 
+  function pageBanner() {
+    //php logic will live here
+    ?>
+    <div class="page-banner">
+      <div class="page-banner__bg-image" style="background-image: url(<?php 
+    $pageBannerImage = get_field('page_banner_background_image'); echo $pageBannerImage['sizes']['pageBanner']
+    ?>);"></div>
+      <div class="page-banner__content container container--narrow">
+        <h1 class="page-banner__title"> <?php the_title(); ?> </h1>
+        <p> <?php the_archive_description() ?> </p>
+        <div class="page-banner__intro">
+          <p> <?php the_field('page_banner_subtitle') ?> </p>
+        </div>
+      </div>
+    </div>
+  <?php }
+
   // function for loading in CSS files
   function university_files()
   {

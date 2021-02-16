@@ -1,21 +1,11 @@
 <?php 
 
-get_header(); ?>
+  get_header(); 
+  pageBanner();
 
-<div class="page-banner">
-  <!-- get_theme_file_uri('') -->
-  <div class="page-banner__bg-image" style="background-image: url(<?php echo get_theme_file_uri('/images/ocean.jpg') ?>);"></div>
-  <div class="page-banner__content container container--narrow">
-    <!-- determinuje czy powinno odwołać się do autora czy kategorii -->
-    <h1 class="page-banner__title"> <?php the_archive_title() ?> </h1>
-    <!-- pobiera informacje o autorze lub kategorii - description -->
-    <p> <?php the_archive_description() ?> </p>
-    <!-- sub-title -->
-    <div class="page-banner__intro">
-      <p>Keep up with our latest news</p>
-    </div>
-  </div>
-</div>
+?>
+
+
 
 <div class="container container--narrow page-section">
 <!-- display posts - as long as the function have_posts() display true -->
