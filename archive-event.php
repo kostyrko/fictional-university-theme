@@ -1,19 +1,11 @@
 <?php 
 
-get_header(); ?>
-
-<div class="page-banner">
-  <!-- get_theme_file_uri('') -->
-  <div class="page-banner__bg-image" style="background-image: url(<?php echo get_theme_file_uri('/images/ocean.jpg') ?>);"></div>
-  <div class="page-banner__content container container--narrow">
-    <h1 class="page-banner__title"> All events </h1>
-    <p> See what is going on in our world </p>
-    <!-- sub-title -->
-    <div class="page-banner__intro">
-      <p>Keep up with our latest news</p>
-    </div>
-  </div>
-</div>
+get_header(); 
+pageBanner(array(
+  'title' => 'All events',
+  'subtitle' => 'See what is going on in our world'
+));
+?>
 
 <div class="container container--narrow page-section">
 <!-- display posts - as long as the function have_posts() display true -->
