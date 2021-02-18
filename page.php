@@ -3,7 +3,13 @@
   get_header();
   while (have_posts()) {
       the_post(); 
-      pageBanner();
+      pageBanner(
+      //   array(
+      //   'title' => 'Our title',
+      //   'subtitle' => 'Our subtitle',
+      //   'photo' => 'https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=966&q=80'
+      // )
+    );
       ?>
 
       <div class="container container--narrow page-section">
