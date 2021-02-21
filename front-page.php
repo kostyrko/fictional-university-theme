@@ -82,12 +82,13 @@
             ));
 
             while ($homepagePosts->have_posts()) {
-              $homepagePosts->the_post(); 
-              get_template_part('template-parts/event');
-            } 
+              $homepagePosts->the_post();
+              // content-event (template parts)
+              get_template_part('template-parts/content', 'event');
+            }
             // wp_reset_postdata();
-          ?> 
-          
+          ?>
+
 
           <!-- link do blog page -->
           <p class="t-center no-margin"><a href=" <?php echo site_url('/blog'); ?> " class="btn btn--yellow">View All Blog Posts</a></p>
