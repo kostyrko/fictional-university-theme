@@ -1,21 +1,11 @@
 <?php
 
-get_header(); ?>
-
-<div class="page-banner">
-
-  <div class="page-banner__bg-image" style="background-image: url(<?php echo get_theme_file_uri('/images/ocean.jpg') ?>);"></div>
-  <div class="page-banner__content container container--narrow">
-
-    <h1 class="page-banner__title"> Search results! </h1>
-
-    <div class="page-banner__intro">
-      <!-- !! see the url output -->
-      <p>You searched for: <?php echo esc_html(get_search_query(false)) ?></p>
-    </div>
-  </div>
-</div>
-
+get_header(); 
+pageBanner(array(
+  'title' => 'Search results',
+  'subtitle' => 'Your searched for &ldquo;' . esc_html(get_search_query(false)) . '&rdquo;'
+))
+?>
   <div class="container container--narrow page-section">
     <?php
     if (have_posts()) {
