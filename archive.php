@@ -18,14 +18,14 @@
 
       <div class="metabox">
         <!-- add author, time of post and the category of it -->
-        <p>Posted by <?php the_author_posts_link(); ?> on <?php the_time('j.m.Y') ?> in <?php echo get_the_category_list(' ,'); ?></p>
+        <p>Umieszczone przez <?php the_author_posts_link(); ?> on <?php the_time('j.m.Y') ?> in <?php echo get_the_category_list(' ,'); ?></p>
       </div>
 
       <div class="generic-content">
         <!-- pokaż jedynie wycinek postu/treści -->
         <?php the_excerpt(); ?>
 
-        <p><a class="btn btn--blue" href="<?php the_permalink() ?>">Continue reading &raquo;</a></p>
+        <p><a class="btn btn--blue" href="<?php the_permalink() ?>">Czytaj dalej &raquo;</a></p>
       </div>
 
     </div>

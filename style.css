@@ -1,5 +1,5 @@
 /*
-  Theme Name: Fictional University
+  Theme Name: Galeria Arstystyczna
   Author: Mikolaj
   Version: 1.0
 */
@@ -405,7 +405,7 @@ p, li {
   font-weight: 400;
 }
 .school-logo-text a {
-  color: #FFF;
+  color: black;
   text-decoration: none;
 }
 .school-logo-text--alt-color a {
@@ -883,12 +883,15 @@ body.login {
 }
 .site-header {
   z-index: 3;
-  position: absolute;
+  /* position: absolute;
   top: 0;
   left: 0;
-  right: 0;
+  right: 0; */
   padding: 20px 0;
+  /* display: flex; */
 }
+
+
 .site-header__avatar {
     position: absolute;
     top: 0;
@@ -902,7 +905,7 @@ body.login {
 .site-header__menu {
     visibility: hidden;
     position: absolute;
-    background-color: rgba(13, 55, 94, 0.89);
+    /* background-color: rgba(13, 55, 94, 0.89); */
     left: 0;
     right: 0;
     top: -20px;
@@ -911,6 +914,9 @@ body.login {
     transform: translateY(-20%);
     transition: opacity .3s ease-out, visibility .3s ease-out, transform .3s ease-out;
     padding-bottom: 20px;
+    display: flex;
+    height: 65px;
+    justify-content: center;
   }
 .site-header__menu--active {
       opacity: 1;
@@ -927,7 +933,7 @@ body.login {
       float: right;
       padding-top: 0;
       padding-bottom: 0;
-      top: 0
+      top: 0;
   }
   }
 .site-header__search-trigger {
@@ -950,7 +956,7 @@ body.login {
   }
   }
 .site-header__menu-trigger {
-    color: #FFF;
+    color: rgb(27, 27, 27);
     cursor: pointer;
     font-size: 1.2rem;
     position: absolute;
@@ -991,7 +997,7 @@ body.login {
   }
 .site-footer {
   padding: 2rem 0 3.5rem 0;
-  background-image: linear-gradient(#FFF, #ECECEC);
+  /* background-image: linear-gradient(rgb(46, 46, 46), #474747); */
 }
 .site-footer p {
     font-size: .9rem;
@@ -1093,7 +1099,7 @@ body.login {
 .main-navigation a {
   display: block;
   padding: 10px 20px;
-  color: #FFF;
+  color: black;
   text-decoration: none;
   font-weight: 300;
 }
@@ -1105,12 +1111,13 @@ body.login {
   }
 .main-navigation .current-menu-item a,
 .main-navigation a:hover {
-  color: #FAF0CA;
+  color: #464543;
 }
 .page-banner {
-  background-color: #000;
+  background-color: white;
   padding: 80px 0 40px 0;
   position: relative;
+
 }
 @media (min-width: 530px) {
 .page-banner {
@@ -1126,16 +1133,23 @@ body.login {
     font-weight: 300;
     font-size: 3.6rem;
     margin: 0 0 1rem 0;
-    color: #FFF;
+    color: rgb(58, 57, 57);
   }
 @media (min-width: 530px) {
 .page-banner__title {
       font-size: 5rem
   }
   }
+
+.page-banner_image-container {
+  background-color: white;
+  display: flex;
+}
+
 .page-banner__bg-image {
-    opacity: .33;
-    background-size: cover;
+    opacity: .80;
+    background-size: contain;
+    background-repeat: no-repeat;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -1146,7 +1160,7 @@ body.login {
     font-weight: 300;
     font-size: 1.2rem;
     line-height: 1.3;
-    color: #EDEDED;
+    color: #2b2b2b;
   }
 @media (min-width: 530px) {
 .page-banner__intro {
@@ -1175,6 +1189,7 @@ body.login {
 .hero-slider__slide {
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
   }
 .hero-slider__overlay {
     margin: 0 auto;
@@ -1524,7 +1539,7 @@ body.admin-bar .search-overlay {
   }
 .full-width-split__two {
     flex: 1;
-    background-color: #FAF0CA;
+    background-color: white;
     padding: 1.6rem 16px;
   }
 @media (min-width: 960px) {
@@ -1709,3 +1724,13 @@ margin: 20px 0;
     border-bottom: none;
     margin-bottom: 0;
   }
+
+.site-logo {
+  width: 100px;
+  height: 65px;
+  background-image: url('./images/logo_jak.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* background-color: black; */
+}

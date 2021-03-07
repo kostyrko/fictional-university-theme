@@ -2,8 +2,8 @@
 
 get_header(); 
 pageBanner(array(
-  'title' => 'All events',
-  'subtitle' => 'See what is going on in our world'
+  'title' => 'Wszystkie wydarzenia',
+  'subtitle' => 'Poczytaj o tym co się u nas wydarzy'
 ));
 ?>
 
@@ -19,7 +19,7 @@ pageBanner(array(
 ?>
 <hr class="section-break">
 
-<p>Looking for a recap of past events? <a href="<?php echo site_url('/past-events') ?>">Check out our past events archive</a>.</p>
+<p>Szukasz informacji na temat wydarzeń, które się odbyły? <a href="<?php echo site_url('/past-events') ?>">Zapraszamy do archiwum</a>.</p>
 
 </div>
 

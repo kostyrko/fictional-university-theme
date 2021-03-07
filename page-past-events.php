@@ -2,8 +2,8 @@
 
 get_header();
 pageBanner(array(
-  'title' => 'Past Events',
-  'subtitle' => 'A recap of our past events.'
+  'title' => 'Wcześniejsze wydarzenia',
+  'subtitle' => 'Tutaj znajdują się informacje na temat przeszłych wydarzeń.'
 ));
 ?>
 

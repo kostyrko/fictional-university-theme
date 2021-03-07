@@ -13,9 +13,10 @@
 <body <?php body_class(); ?>>
 <header class="site-header">
   <div class="container">
-    <h1 class="school-logo-text float-left">
-      <a href="<?php echo site_url() ?>">Galeria <strong>JAK</strong></a>
-    </h1>
+    
+    <div class="school-logo-text float-left">
+      <a href="<?php echo site_url() ?>"><div class="site-logo"></div></a>
+    </div>
     <a href="<?php echo esc_url(site_url('/search')) ?>" class="js-search-trigger site-header__search-trigger"><i class="fa fa-search" aria-hidden="true"></i></a>
     <i class="site-header__menu-trigger fa fa-bars" aria-hidden="true"></i>
     <div class="site-header__menu group">
@@ -28,10 +29,11 @@
       ?> -->
         <ul>
         <!-- jeśli dana strona jest 'about-us' lub jeśli jest podstroną 'about-us' wtedy wykonaj - przez echo// is_page - sprawdza czy arg. podany jest zgodny z prawdą jako arg. przyjmuje slug -->
-          <li <?php if(is_page( 'about-us' ) or wp_get_post_parent_id( 0 ) === 12) echo 'class="current-menu-item"' ?>><a href="<?php echo site_url('/about-us/') ?>">O Nas</a></li>
           <li <?php if (get_post_type() == 'event' OR is_page('past-events')) echo 'class="current-menu-item"' ?> ><a href="<?php echo get_post_type_archive_link('event'); ?>">Wydarzenia</a></li>
           <!-- jeśli typ strony jest post to wtedy dodaj html/klasę  -->
           <li <?php if (get_post_type() == 'post') echo 'class="current-menu-item' ?>><a href="<?php echo site_url('/blog'); ?>">Aktualności</a></li>
+          <li <?php if(is_page( 'about-us' ) or wp_get_post_parent_id( 0 ) === 12) echo 'class="current-menu-item"' ?>><a href="<?php echo site_url('/about-us/') ?>">O Nas</a></li>
+          <li ><a href="#kontakt">Kontakt</a></li>
         </ul>
       </nav>
       <div class="site-header__util">
