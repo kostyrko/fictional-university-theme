@@ -1,40 +1,7 @@
 
 <?php get_header();?>
 
-    <div class="hero-slider">
-      <div data-glide-el="track" class="glide__track">
-        <div class="glide__slides">
-          <div class="hero-slider__slide" style="background-image: url(<?php echo get_theme_file_uri('/images/wystawy.JPG') ?>);">
-            <div class="hero-slider__interior container">
-              <div class="hero-slider__overlay">
-                <h2 class="headline headline--medium t-center">Wernisaże</h2>
-                <p class="t-center">Jakiś tekst</p>
-                <p class="t-center no-margin"><a href="#" class="btn btn--blue">Wydarzenia</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="hero-slider__slide" style="background-image: url(<?php echo get_theme_file_uri('/images/warsztaty.JPG') ?>);">
-            <div class="hero-slider__interior container">
-              <div class="hero-slider__overlay">
-                <h2 class="headline headline--medium t-center">Warsztaty</h2>
-                <p class="t-center">Jakiś tekst</p>
-                <p class="t-center no-margin"><a href="#" class="btn btn--blue">Dowiedz się więcej</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="hero-slider__slide" style="background-image: url(<?php echo get_theme_file_uri('/images/biennale.jpg') ?>);">
-            <div class="hero-slider__interior container">
-              <div class="hero-slider__overlay">
-                <h2 class="headline headline--medium t-center">Biennale</h2>
-                <p class="t-center">Jakiś tekst</p>
-                <p class="t-center no-margin"><a href="#" class="btn btn--blue">Link do tekstu</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="slider__bullets glide__bullets" data-glide-el="controls[nav]"></div>
-      </div>
-    </div>
+
 
     <div class="full-width-split group">
       <div class="full-width-split__one">
@@ -70,6 +37,21 @@
             while($homepageEvents->have_posts()) {
               $homepageEvents->the_post(); ?>
                 <div class="event-summary">
+                
+                <div class="image">
+                <?php if(!$args['photo']){
+                    if(get_field('page_banner_background_image')){
+                      $args['photo'] = get_field('page_banner_background_image')['sizes']['medium'];
+                    } else {
+                      $args['photo'] = get_theme_file_uri('/images/logo_jak.jpg');
+                    }
+                  };?>
+                <div class="page-banner">
+                  <div class="page-banner__small-image" style="background-image: url(<?php echo $args['photo']
+                ?>);"></div>
+                
+
+
                   <a class="event-summary__date t-center" href="<?php the_permalink(); ?>">
                     <!-- get_field() - wymaga ustawienia plugin Advance Custom Fields lekcja 36. -->
                     <!-- Przyjęcie daty zwracanej przez plugin i jej zmiana przez klasę DateTime a następnie wyciągnięcie odpowiednich danych -->
@@ -121,40 +103,6 @@
       </div>
     </div>
 
-    <!-- <div class="hero-slider">
-      <div data-glide-el="track" class="glide__track">
-        <div class="glide__slides">
-          <div class="hero-slider__slide" style="background-image: url(<?php echo get_theme_file_uri('/images/wystawy.JPG') ?>);">
-            <div class="hero-slider__interior container">
-              <div class="hero-slider__overlay">
-                <h2 class="headline headline--medium t-center">Wernisaże</h2>
-                <p class="t-center">Jakiś tekst</p>
-                <p class="t-center no-margin"><a href="#" class="btn btn--blue">Wydarzenia</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="hero-slider__slide" style="background-image: url(<?php echo get_theme_file_uri('/images/warsztaty.JPG') ?>);">
-            <div class="hero-slider__interior container">
-              <div class="hero-slider__overlay">
-                <h2 class="headline headline--medium t-center">Warsztaty</h2>
-                <p class="t-center">Jakiś tekst</p>
-                <p class="t-center no-margin"><a href="#" class="btn btn--blue">Dowiedz się więcej</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="hero-slider__slide" style="background-image: url(<?php echo get_theme_file_uri('/images/biennale.jpg') ?>);">
-            <div class="hero-slider__interior container">
-              <div class="hero-slider__overlay">
-                <h2 class="headline headline--medium t-center">Biennale</h2>
-                <p class="t-center">Jakiś tekst</p>
-                <p class="t-center no-margin"><a href="#" class="btn btn--blue">Link do tekstu</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="slider__bullets glide__bullets" data-glide-el="controls[nav]"></div>
-      </div>
-    </div> -->
 
 <?php  get_footer();?>
 
