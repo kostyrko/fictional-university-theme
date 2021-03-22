@@ -17,17 +17,6 @@
 
       wp_enqueue_script('main-university-js', 'http://localhost:3000/bundled.js', null, '1.0', true);
 
-    // if(strstr($_SERVER['SERVER_NAME'], 'localhost')) {
-    // // serve js/css from localhost (by webpack)
-    // wp_enqueue_script('main-university-js', 'http://localhost:3000/bundled.js', NULL, '1.0', true);
-    // wp_enqueue_script('our-university-js', get_theme_file_uri('/bundled-assets/vendors~scripts.8c97d901916ad616a264.js'), NULL, '1.0', true);
-    // wp_enqueue_script('main-university-js', get_theme_file_uri('/bundled-assets/scripts.bc49dbb23afb98cfc0f7.js'), NULL, '1.0', true);
-    // wp_enqueue_script('our-main-styles', get_theme_file_uri('/bundled-assets/styles.bc49dbb23afb98cfc0f7.css'), NULL, '1.0', true);
-    // } else {
-    //   wp_enqueue_script('our-university-js', get_theme_file_uri('/bundled-assets/vendors~scripts.8c97d901916ad616a264.js'), NULL, '1.0', true);
-    //   wp_enqueue_script('main-university-js', get_theme_file_uri('/bundled-assets/scripts.bc49dbb23afb98cfc0f7.js'), NULL, '1.0', true);
-    //   wp_enqueue_script('our-main-styles', get_theme_file_uri('/bundled-assets/styles.bc49dbb23afb98cfc0f7.css'), NULL, '1.0', true);
-    // }
   }
   
 
@@ -107,4 +96,3 @@ function ignoreCertainFiles($exclude_filters) {
   $exclude_filters[] = 'themes/fictional-university-theme/node_modules';
   return $exclude_filters;
 }
-

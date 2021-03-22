@@ -1,12 +1,8 @@
 
 <?php get_header();?>
-
-
-
     <div class="full-width-split group">
       <div class="full-width-split__one">
         <div class="full-width-split__inner">
-
           <h2 class="headline headline--small-plus t-center">Nadchodzące wydarzenia</h2>
           <!-- Custom query for events -->
           <?php 
@@ -37,7 +33,6 @@
             while($homepageEvents->have_posts()) {
               $homepageEvents->the_post(); ?>
                 <div class="event-summary">
-                
                 <div class="image">
                 <?php if(!$args['photo']){
                     if(get_field('page_banner_background_image')){
@@ -49,9 +44,6 @@
                 <div class="page-banner">
                   <div class="page-banner__small-image" style="background-image: url(<?php echo $args['photo']
                 ?>);"></div>
-                
-
-
                   <a class="event-summary__date t-center" href="<?php the_permalink(); ?>">
                     <!-- get_field() - wymaga ustawienia plugin Advance Custom Fields lekcja 36. -->
                     <!-- Przyjęcie daty zwracanej przez plugin i jej zmiana przez klasę DateTime a następnie wyciągnięcie odpowiednich danych -->
@@ -69,12 +61,12 @@
                           echo wp_trim_words(get_the_content(), 18);
                         }
                     ?>
-                 <a href="<?php the_permalink(); ?>">Learn more</a></p>
+                <a href="<?php the_permalink(); ?>">Learn more</a></p>
                   </div>
                 </div>
             <?php }
           ?>
-  
+
           <p class="t-center no-margin"><a href=" <?php echo get_post_type_archive_link('event')?> " class="btn btn--blue">Wszystkie wydarzenia</a></p>
         </div>
       </div>
@@ -95,8 +87,6 @@
             }
             // wp_reset_postdata();
           ?>
-
-
           <!-- link do blog page -->
           <p class="t-center no-margin"><a href=" <?php echo site_url('/blog'); ?> " class="btn btn--blue">Więcej aktualności</a></p>
         </div>
