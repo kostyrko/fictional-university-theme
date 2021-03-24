@@ -13,8 +13,7 @@
 <body <?php body_class(); ?>>
 <header class="site-header">
   <div class="container">
-    
-    <div class="school-logo-text float-left">
+    <div class="gallery-logo">
       <a href="<?php echo site_url() ?>"><div class="site-logo"></div></a>
     </div>
     <a href="<?php echo esc_url(site_url('/search')) ?>" class="js-search-trigger site-header__search-trigger"><i class="fa fa-search" aria-hidden="true"></i></a>

@@ -5,6 +5,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const rename = require('gulp-rename');
 
 
+
 gulp.task('sass', function(){
   return gulp.src('./sass/main.scss')
     .pipe(sourcemaps.init())
@@ -15,6 +16,7 @@ gulp.task('sass', function(){
     .pipe(rename('style.css'))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./'))
+
 });
 
 gulp.task('watch', function() {
