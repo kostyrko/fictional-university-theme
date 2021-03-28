@@ -1,7 +1,6 @@
 <?php
 
-
-  // function for loading in CSS files
+  // function for loading in CSS/JS/Font files
   function university_files()
   {
       wp_enqueue_style('custome-google-fonts', '//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i');
@@ -13,10 +12,9 @@
       wp_enqueue_style('university_main_styles', get_stylesheet_uri());
     
       // for a loading JS file, (directory/file), dependencies, version nr, load before closing body tag = true
-      wp_enqueue_script('main-university-js', get_theme_file_uri('/js/scripts-bundled.js'), NULL, '1.0', true);
+      wp_enqueue_script('main-university-js', get_theme_file_uri('/js/app.js'), NULL, '1.0', true);
 
-      wp_enqueue_script('main-university-js', 'http://localhost:3000/bundled.js', null, '1.0', true);
-
+      // wp_enqueue_script('main-university-js', 'http://localhost:3000/bundled.js', null, '1.0', true);
   }
   
 
