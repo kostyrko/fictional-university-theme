@@ -1,9 +1,14 @@
 
 <?php get_header();?>
     <main class="full-width-split group">
+
+      <div class="container">
+        <div class="site-banner"></div>
+      </div>
+      
       <section class="full-width-split__one">
         <div class="full-width-split__inner">
-          <h2 class="headline headline--small-plus t-center">Nadchodzące wydarzenia</h2>
+          <h2 class="main-headline center">Nadchodzące wydarzenia</h2>
           <!-- Custom query for events -->
           <?php 
             // the same format as the plugin uses/was set in Advance Custom Fields
@@ -65,7 +70,7 @@
             <?php }
           ?>
 
-          <p class="t-center no-margin"><a href=" <?php echo get_post_type_archive_link('event')?> " class="btn btn--blue">Wszystkie wydarzenia</a></p>
+          <div class="section-link center"><a href=" <?php echo get_post_type_archive_link('event')?> " class="btn btn--blue">Wszystkie wydarzenia</a></div>
         </div>
       </section>
       <section class="full-width-split__two">

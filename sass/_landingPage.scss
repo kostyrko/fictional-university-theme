@@ -1,3 +1,36 @@
+//main
+.full-width-split {
+  .site-banner {
+    height: 75vh;
+    width: 100%;
+    background-image: url(./images/wystawy.JPG);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  // section 1
+  .full-width-split__one {
+    border: 1px solid red;
+    .center {
+      @include flex-center;
+    }
+    .main-headline {
+      border: 1px solid black;
+    }
+    .event-summary {
+      border: 1px solid blue;
+      background-color: rgb(219, 219, 219);
+      @include flex-center;
+    }
+    .section-link {
+      border: 1px solid black;
+    }
+  }
+  // section 2
+  .full-width-split__two {
+    border: 1px solid blue;
+  }
+}
 .page-banner__small-image{
   width: 200px;
   height: 150px;
