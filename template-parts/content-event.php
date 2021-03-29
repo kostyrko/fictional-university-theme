@@ -1,4 +1,4 @@
-<div class="event-summary">
+<article class="event-summary">
   <a class="event-summary__date t-center" href="#">
     <span class="event-summary__month"><?php
       $eventDate = new DateTime(get_field('event_date'));
@@ -14,4 +14,4 @@
         echo wp_trim_words(get_the_content(), 18);
         } ?> <a href="<?php the_permalink(); ?>" class="nu gray">Dowiedz się więcej</a></p>
   </div>
-</div>
+</article>
