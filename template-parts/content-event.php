@@ -1,6 +1,7 @@
-<div class="event-summary">
-  <div class="container">
-    <a class="event-summary__date t-center" href="#">
+<article class="event-summary post-summary">
+  <?php getPageBannerImage();?>
+  <div class="event-summary__container">
+    <a class="event-summary__date" href="#">
       <span class="event-summary__month"><?php
         $eventDate = new DateTime(get_field('event_date'));
         echo $eventDate->format('M')
@@ -19,4 +20,4 @@
       </p>
     </div>
   </div>
-</div>
+</article>
