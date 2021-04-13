@@ -48,18 +48,18 @@
                         </span>
                       </a>
                     </div>
-                    <div class="event-summary__content">
-                      <h5 class="event-summary__title headline headline--tiny">
+                    <div class="event-summary__content center">
+                      <h5 class="event-summary__title headline headline--tiny marginize">
                         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                       </h5>
-                      <p>
+                      <p class="event-summary__text">
                         <?php if (has_excerpt()){
                           echo get_the_excerpt();
                             } else {
                               echo wp_trim_words(get_the_content(), 18);
                             }
                         ?>
-                          <a href="<?php the_permalink(); ?>">Czytaj dalej</a>
+                          <a class="marginize" href="<?php the_permalink(); ?>"><i class="fa fa-chevron-right" aria-hidden="true" title="Czytaj dalej"></i></a>
                       </p>
                     </div>
                   </div>  

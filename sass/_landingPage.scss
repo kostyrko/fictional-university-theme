@@ -16,53 +16,81 @@
   }
   // common for both sections
   .landing-section {
-    border: 4px solid red;
+    // border: 4px solid red;
     .center {
       @include flex-center;
     }
+    .marginize {
+      margin: $margin-small;
+    }
     .event-summary {
-      border: 2px solid blue;
-      background-color: rgb(219, 219, 219);
+      // border: 2px solid blue;
+      background-color: rgba(219, 219, 219, 0.212);
       display: flex;
       align-items: center;
     }
-    // post summery text content
-    .event-summary__container {
-      border: 2px solid rgb(13, 90, 3);
-      position: relative;
-      left: -20px;
-      background-color: white;
-      width: 50vw;
-    }
     // post summery image
     .post-image {
-      width: 50vw;
+      width: 40vw;
       height: 400px;
       background-size: cover;
       // background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
     }
+    // event/post text content container
+    .event-summary__container {
+      // positioning to parent
+      position: relative;
+      left: -20px;
+      width: 40vw;
+      background-color: white;
+      // children positioning
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      // main styling
+      padding: $padding-medium;
+
+      // all links
+      a {
+        text-decoration: none;
+        color: $main-dark;
+      }
+    }
     // every second post summery on landing page
     .event-summary:nth-of-type(even){
       display: flex;
       flex-direction: row-reverse;
       .event-summary__container {
-        border: 2px solid rgb(13, 90, 3);
+        // border: 2px solid rgb(13, 90, 3);
         position: relative;
         left: 20px;
         background-color: white;
       }
     }
-    
+    .event-summary__content {
+      flex-direction: column;
+      .event-summary__title {
+        text-decoration: none;
+      }
+      .event-summary__text {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        a {
+          color: $space-gray;
+          i {
+            -webkit-text-stroke: 1px white;
+          }
+        }
+      }
+    }
     .section-link {
-      border: 1px solid black;
+      // border: 1px solid black;
     }
   }
-  // section 2
-  // .full-width-split__two {
-  //   border: 1px solid blue;
-  // }
 }
 
 
