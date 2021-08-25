@@ -1,6 +1,6 @@
 class MobileMenu {
   constructor() {
-    this.menu = document.querySelector(".site-header__menu")
+    this.menu = document.querySelector(".main-navigation")
     this.openButton = document.querySelector(".site-header__menu-trigger")
     this.events()
   }

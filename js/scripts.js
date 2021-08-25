@@ -13,3 +13,4 @@ var heroSlider = new HeroSlider()
 if (module.hot) {
   module.hot.accept()
 }
+
